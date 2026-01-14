@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-almond text-walnut font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .wood-grain {
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        rgba(74, 53, 42, 0.04) 0px,
+        rgba(74, 53, 42, 0.04) 2px,
+        transparent 2px,
+        transparent 18px
+      );
+  }
+
+  .shelf-shadow {
+    box-shadow:
+      0 8px 12px -6px rgba(74, 53, 42, 0.35),
+      0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(74, 53, 42, 0.25);
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
